@@ -1,0 +1,12 @@
+.GlobalContainer{
+    display:flex;
+    flex-direction: wrap;
+ 
+}
+
+                       
+.DataCardStyle{
+    margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px !important;}
