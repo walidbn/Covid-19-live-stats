@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios';
-
+import WorldCountries from './WorldCountries';
 import DataCard from '../Components/DataCard';
 import './Home.css';
 import { AiOutlineFieldTime } from "react-icons/ai";
@@ -34,7 +34,7 @@ export default class Home extends React.Component {
                     <>
                         <div className="GlobalContainer">
 
-                            <DataCard title={'Golbal Cases'} number={element.cases} updated={element.updated} className="DataCardStyle" />
+                            <DataCard key={index} title={'Golbal Cases'} number={element.cases} updated={element.updated} className="DataCardStyle" />
                             <DataCard title={'Today Cases'} number={element.todayCases} updated={element.updated} className="DataCardStyle" />
                             <DataCard title={'Deaths'} number={element.deaths} updated={element.updated} className="DataCardStyle" />
                             <DataCard title={'Today Deaths'} number={element.todayDeaths} updated={element.updated} className="DataCardStyle" />
@@ -52,6 +52,7 @@ export default class Home extends React.Component {
                         </div>
 
                         <h5>     <AiOutlineFieldTime />        Last update since :  {lastUpdated}</h5>
+                        <WorldCountries />
                     </>
                 )}
             </div>
