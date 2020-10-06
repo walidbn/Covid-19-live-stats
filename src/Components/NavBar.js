@@ -14,7 +14,7 @@ export default class NavBar extends Component {
                     <Nav className="mr-auto">
                         <  Nav.Link ><Link to="/">Live Stats</Link></Nav.Link>
                         <Nav.Link><Link to="/symptoms">  Symptoms</Link></Nav.Link>
-                        <Nav.Link><Link to="/graphs">GRAPHS</Link></Nav.Link>
+                        <Nav.Link><Link to="/graphs">Graphs</Link></Nav.Link>
                         <Nav.Link><Link to="/about">About</Link></Nav.Link>
 
                     </Nav>

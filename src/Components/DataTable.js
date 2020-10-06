@@ -1,47 +1,48 @@
 import React, { Component } from 'react'
-import Table from 'react-bootstrap/Table'
-import ReactTable from 'react-table-6'
-import 'react-table-6/react-table.css'
+import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'
+import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'
 export default class DataTable extends Component {
 
     render() {
 
         return (
-            <Table striped bordered hover size="sm" responsive="sm">
-                <thead>
-                    <tr >
-                        <th>#</th>
-                        <th>Country</th>
-                        <th>Cases</th>
-                        <th>Today Cases</th>
-                        <th>Active</th>
-                        <th>Critical</th>
-                        <th>Deaths</th>
-                        <th>Today Deaths</th>
-                        <th>Recovered</th>
-                        <th>Today Recovered</th>
-                        <th>Tests</th>
+            <Table style={{ fontSize: '20px', fontWeight: 'bold' }}>
+                <Thead>
+                    <Tr >
+                        <Th>#</Th>
+                        <Th>Country</Th>
+                        <Th>Cases</Th>
+                        <Th>Today Cases</Th>
+                        <Th>Active</Th>
+                        <Th>Critical</Th>
+                        <Th>Deaths</Th>
+                        <Th>Today Deaths</Th>
+                        <Th>Recovered</Th>
+                        <Th>Today Recovered</Th>
+                        <Th>Tests</Th>
 
-                    </tr>
-                </thead>
-                <tbody>
-                    {this.props.data.map((element, index) => <tr>
-                        <td key={index}>{index + 1}</td>
-                        <td>{element.country}</td>
-                        <td>{element.cases}</td>
-                        <td>{element.todayCases}</td>
-                        <td>{element.active}</td>
-                        <td>{element.critical}</td>
-                        <td>{element.deaths}</td>
-                        <td>{element.todayDeaths}</td>
-                        <td>{element.recovered}</td>
-                        <td>{element.todayRecovered}</td>
-                        <td>{element.tests}</td>
+                    </Tr>
+                </Thead>
 
-                    </tr>)}
+                <Tbody>
+                    {this.props.data.map((element, index) =>
+                        <Tr>
+                            <Td key={index} >{index + 1}</Td>
+                            <Td>{element.country}</Td>
+                            <Td>{element.cases}</Td>
+                            <Td>{element.todayCases}</Td>
+                            <Td>{element.active}</Td>
+                            <Td>{element.critical}</Td>
+                            <Td>{element.deaths}</Td>
+                            <Td>{element.todayDeaths}</Td>
+                            <Td>{element.recovered}</Td>
+                            <Td>{element.todayRecovered}</Td>
+                            <Td>{element.tests}</Td>
+
+                        </Tr>)}
 
 
-                </tbody>
+                </Tbody>
             </Table>
         )
     }
