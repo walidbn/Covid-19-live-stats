@@ -10,3 +10,15 @@
   text-align: center;
   line-height: 75px;
   font-size: 30px !important;}
+
+
+
+  @media only screen and (max-width: 600px) {
+    .GlobalContainer {
+        display:flex;
+        flex-direction: column;
+        width:100% ;
+        align-items: center;
+    }
+    
+  }
