@@ -35,7 +35,7 @@ export default class WorldCountries extends Component {
             <div >
                 <Button variant="light" onClick={this.handelChange} size="lg" style={{ marginRight: '25px' }}> Show {!this.state.showed ? 'Table' : 'List'}</Button>
 
-                {this.state.showed ? <DataTable data={this.state.worldCountries} /> :
+                {this.state.showed ? <DataTable data={this.state.worldCountries} searchedCountry={this.props.searchedCountry} /> :
 
                     <CardColumns style={{ marginBottom: '8px' }}>
                         <CountrieCard countries={this.state.worldCountries} />

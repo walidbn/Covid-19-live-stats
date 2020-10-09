@@ -4,14 +4,14 @@ import WorldCountries from './WorldCountries';
 import DataCard from '../Components/DataCard';
 import './Home.css';
 
-import { AiOutlineFieldTime } from "react-icons/ai";
 
+import Form from 'react-bootstrap/Form'
 
 import { FcGlobe, FcCalendar, FcDislike, FcLike, FcDataRecovery, FcExpired, FcOvertime } from "react-icons/fc";
 export default class Home extends React.Component {
     state = {
         general: [],
-
+        searchedCountry: " ",
 
     };
 
@@ -23,6 +23,12 @@ export default class Home extends React.Component {
             console.log(this.state.general)
         })
 
+
+
+    }
+    changeCountry = e => {
+
+        this.setState({ searchedCountry: e.target.value })
 
 
     }
@@ -54,7 +60,12 @@ export default class Home extends React.Component {
                             <DataCard title={'Critical Cases'} icone={<FcDataRecovery />} number={element.critical} updated={element.updated} className="DataCardStyle" />
 
                         </div>
-                        <WorldCountries />
+                        <Form.Group>
+
+                            <Form.Control type="text" placeholder="Search coutnry ... " onChange={this.changeCountry} />
+
+                        </Form.Group>
+                        <WorldCountries searchedCountry={this.state.searchedCountry} />
                         <h5>     <FcOvertime />        Last update since :  {lastUpdated}</h5>
 
                     </>

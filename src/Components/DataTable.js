@@ -23,11 +23,14 @@ export default class DataTable extends Component {
 
                     </Tr>
                 </Thead>
-
+                {console.log(this.props.searchedCountry)}
                 <Tbody>
-                    {this.props.data.map((element, index) =>
-                        <Tr>
-                            <Td key={index} >{index + 1}</Td>
+                    {this.props.data.filter(element =>
+                        element.country === this.props.searchedCountry
+                    ).map((element, index) =>
+
+                        < Tr >
+                            <Td  >{index + 1}</Td>
                             <Td>{element.country}</Td>
                             <Td>{element.cases}</Td>
                             <Td>{element.todayCases}</Td>
